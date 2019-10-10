@@ -58,38 +58,65 @@ To learn more about the mentioned above tools and technologies -  please check s
     ```
     Output going to be :
     ```shell
+
     An execution plan has been generated and is shown below.
     Resource actions are indicated with the following symbols:
-    + create
+      + create
+     <= read (data resources)
 
     Terraform will perform the following actions:
 
-    # github_repository.example will be created
-    + resource "github_repository" "example" {
-        + allow_merge_commit = true
-        + allow_rebase_merge = true
-        + allow_squash_merge = true
-        + archived           = false
-        + default_branch     = (known after apply)
-        + description        = "Example codebase repo"
-        + etag               = (known after apply)
-        + full_name          = (known after apply)
-        + git_clone_url      = (known after apply)
-        + html_url           = (known after apply)
-        + http_clone_url     = (known after apply)
-        + id                 = (known after apply)
-        + name               = "example"
-        + ssh_clone_url      = (known after apply)
-        + svn_url            = (known after apply)
+      # data.github_repository.example will be read during apply
+      # (config refers to values not yet known)
+     <= data "github_repository" "example"  {
+          + allow_merge_commit = (known after apply)
+          + allow_rebase_merge = (known after apply)
+          + allow_squash_merge = (known after apply)
+          + archived           = (known after apply)
+          + default_branch     = (known after apply)
+          + description        = (known after apply)
+          + full_name          = "ORGatization/example"
+          + git_clone_url      = (known after apply)
+          + has_downloads      = (known after apply)
+          + has_issues         = (known after apply)
+          + has_projects       = (known after apply)
+          + has_wiki           = (known after apply)
+          + homepage_url       = (known after apply)
+          + html_url           = (known after apply)
+          + http_clone_url     = (known after apply)
+          + id                 = (known after apply)
+          + private            = (known after apply)
+          + ssh_clone_url      = (known after apply)
+          + svn_url            = (known after apply)
+          + topics             = (known after apply)
+        }
+
+      # github_repository.example will be created
+      + resource "github_repository" "example" {
+          + allow_merge_commit = true
+          + allow_rebase_merge = true
+          + allow_squash_merge = true
+          + archived           = false
+          + default_branch     = (known after apply)
+          + description        = "Example codebase repo"
+          + etag               = (known after apply)
+          + full_name          = (known after apply)
+          + git_clone_url      = (known after apply)
+          + html_url           = (known after apply)
+          + http_clone_url     = (known after apply)
+          + id                 = (known after apply)
+          + name               = "example"
+          + ssh_clone_url      = (known after apply)
+          + svn_url            = (known after apply)
         }
 
     Plan: 1 to add, 0 to change, 0 to destroy.
 
     Do you want to perform these actions?
-    Terraform will perform the actions described above.
-    Only 'yes' will be accepted to approve.
+      Terraform will perform the actions described above.
+      Only 'yes' will be accepted to approve.
 
-    Enter a value: yes
+      Enter a value: yes
 
     github_repository.example: Creating...
     github_repository.example: Creation complete after 4s [id=example]
