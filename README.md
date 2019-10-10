@@ -13,8 +13,11 @@ To learn more about the mentioned above tools and technologies -  please check s
 
 # How to use
 
+1. 
+2. You will need first to create Personal Access Token in GitHub, use this link `https://github.com/settings/tokens`, write it down, as you are going to see it only once!
+
 # To do
-- [ ] prepare environment (create tokens and etc)
+
 - [ ] create demo code
 - [ ] test code
 - [ ] update readme
@@ -22,7 +25,7 @@ To learn more about the mentioned above tools and technologies -  please check s
 # Done
 - [x] initial README
 - [x] introduction section
-
+- [x] prepare environment (create tokens and etc)
 
 # Technologies
 
